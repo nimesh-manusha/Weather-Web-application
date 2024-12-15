@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="fake.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+</head>
+
+<body>
+    <main class="main-container">
+        <header class="input-container">
+            <input class="city-input" id="cityInput" placeholder="Search city" type="text">
+            <button class="search-btn" onclick="getWeatherData()">
+                <span class="material-symbols-outlined">travel_explore</span>
+            </button>
+        </header>
+
+        <section class="city-buttons">
+            <button class="city-btn" onclick="getWeatherForCity('New York')">New York</button>
+            <button class="city-btn" onclick="getWeatherForCity('London')">London</button>
+            <button class="city-btn" onclick="getWeatherForCity('Tokyo')">Tokyo</button>
+            <button class="city-btn" onclick="getWeatherForCity('Colombo')">Colombo</button>
+            <button class="city-btn" onclick="getWeatherForCity('Dubai')">Dubai</button>
+        </section>
+
+        <section class="weather-info" id="weatherInfo" style="display: none;">
+            <div class="location-date-container">
+                <div class="location">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <h4 id="cityName">New York</h4>
+                </div>
+                <p id="date">Sun, 10 Dec</p>
+            </div>
+            <div class="weather-summary-container">
+                <img id="weatherIcon" src="" alt="Weather Icon" class="weather-summary-img">
+                <p id="temperature">25 °C Clear Sky</p>
+                <p id="windSpeed">Wind Speed: 10 km/h</p>
+            </div>
+
+            <div class="weather-summary-container">
+                <div class="condition-item">
+                    <span class="material-symbols-outlined">humidity_low</span>
+                    <div class="condition-item">
+                        <h5 class="regular-txt">Humidity</h5>
+                        <h5 id="humidity">50%</h5>
+                    </div>
+                </div>
+
+                <div class="condition-item">
+                    <span class="material-symbols-outlined">air</span>
+                    <div class="condition-item">
+                        <h5 class="regular-txt">Wind</h5>
+                        <h5 id="wind">40%</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast-items-container" id="forecastItems">
+
+            </div>
+        </section>
+
+
+        <section class="Search-city section-message" id="searchMessage">
+            <img src="assets/message/search-city.png">
+            <div>
+                <h1>Search City</h1>
+                <h4 class="regular-txt">Find weather details of the cities</h4>
+            </div>
+        </section>
+
+        <section class="not-found section-message" id="notFoundMessage" style="display: none;">
+            <img src="assets/message/not-found.png">
+            <div>
+                <h1>City Not Found</h1>
+                <h4 class="regular-txt">We couldn't find weather details for this city</h4>
+            </div>
+        </section>
+    </main>
+
+    <script src="java1.js"></script>
+</body>
+
+</html>
